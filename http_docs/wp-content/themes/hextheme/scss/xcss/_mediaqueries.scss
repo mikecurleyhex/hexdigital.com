@@ -1,0 +1,164 @@
+/*
+ * Media Queries
+ *
+ *
+ * 
+ */
+
+@media print {
+  div:not(.reveal-modal) {
+    display: inherit !important;
+  }
+}
+
+@page{
+margin: 0px 0px;
+}
+
+/* STANDARD DESKTOPS */
+@media screen and (min-width:961px)
+	{
+ 
+	}
+
+
+/* SMALL BROWSERS */
+@media screen and (min-width:321px) and (max-width:766px)
+	{
+   
+	}
+
+
+/* MID BROWSERS */
+@media screen and (min-width:769px) and (max-width:1024px)
+	{
+.labeltext {
+	font-size: emCalc(12px);
+}
+
+.navbutton {
+	padding: 20px;	
+	margin-top: -55px;
+	margin-right: 20px;
+	font-size: emCalc(12px);
+}
+
+	}
+	
+
+
+/* BREAKPOINT */
+@media screen and (max-width:768px)
+	{
+.workitemtitle {
+	clear: both;
+}
+
+ .navbar {
+ max-width: 100%;
+
+	li{width: 43.33%;}
+
+ }
+
+.speechmarks {
+	border-right: 0;
+	margin-left: auto;
+	margin-right: auto;	
+	font-size: emCalc(100px);
+	padding: 0;
+	height: 100px;
+}
+
+.quotecontent {
+	text-align: center;
+	font-size: emCalc(20px);
+}
+
+.textblock {
+	font-size: emCalc(14px);
+}
+
+p.lead {
+	font-size: emCalc(18px);
+}
+
+.gform_button {
+	width: 100%;
+	font-size: emCalc(9px) !important;
+	text-align: center;
+}
+
+.close-reveal-modal {
+	display: none;
+}
+
+.subtitle  {
+	text-align: center;	
+}
+
+.clientitems {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+}
+
+/* IPHONES AND BELOW */
+@media screen and (max-width:640px) {
+	#requestaquote {
+	.gf_left_half, .gf_right_half {
+	width: 100% !important;
+	float: none !important;
+	clear: both;
+	margin-top: 0px;
+}
+}
+}
+
+
+/* SMARTPHONES */
+@media screen and (max-width:480px)
+	{
+ .small-element-center {
+ 	max-width: 440px;
+ 	min-width: 100px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+
+ .navbar {
+ max-width: 100%;
+
+	li{width: 100%;}
+
+ }
+
+ .follownav{
+ 	display: none;
+ }
+
+ .textxxl {
+font-size: 61px;
+font-weight: 700;
+letter-spacing: -3px;
+margin-bottom: 0;
+line-height: 0.9em;
+}
+
+}
+
+
+
+/* MOBILE (NON-SMARTPHONE) */
+@media only screen and (max-width:320px)
+	{
+ .small-element-center {
+ 	max-width: 300px;
+	min-width: 100px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+
+}
+	

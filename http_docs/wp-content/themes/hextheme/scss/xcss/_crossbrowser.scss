@@ -1,0 +1,79 @@
+/*
+ * crossbrowser
+ *
+ *
+ * 
+ */
+
+
+/* 
+================================================================================
+IE HACK EXAMPLES 
+================================================================================
+*/
+
+
+/* IE HACK EXAMPLE */
+
+//body {  
+// color: red; /* all browsers, of course */  
+// color : green\9; /* IE8 and below */  
+//}  
+
+//body {  
+// color: red; /* all browsers, of course */  
+// color : green\9; /* IE8 and below */  
+// *color : yellow; /* IE7 and below */  
+//}  
+
+//body {  
+// color: red; /* all browsers, of course */  
+// color : green\9; /* IE8 and below */  
+// *color : yellow; /* IE7 and below */  
+// _color : orange; /* IE6 */  
+//}  
+
+
+/* 
+================================================================================
+FIREFOX HACKS
+================================================================================
+*/
+
+
+/* FIREFOX 2 HACKS */
+
+html>/**/body .selector, x:-moz-any-link {
+  
+}
+
+/* FIREFOX 3 HACKS */
+
+html>/**/body .selector, x:-moz-any-link, x:default {
+  
+}
+
+/* ANY FIREFOX HACKS */
+
+@-moz-document url-prefix() { 
+	.textintroinline, .maintitle {
+	    font-family: 'intro_regular' !important;
+	}
+
+	.maintitle {
+		font-weight: 600;
+	}
+}
+
+
+/* 
+================================================================================
+OPERA HACK
+================================================================================
+*/
+
+@media not all and (-webkit-min-device-pixel-ratio:0) {  
+   .selector {  
+
+   }  
+}  

@@ -1,0 +1,225 @@
+/*
+ * Projects Stylesheet
+ *
+ *
+ * 
+ */
+
+
+.single-projects {
+
+	color: $black !important;
+	text-align: left;
+
+	.projectsubtitle {
+	letter-spacing: 4px;
+	font-size: emCalc(16px);
+	text-transform: uppercase;
+	font-weight: 300;
+	}
+
+	#invision {
+		width: 100%;
+		height: auto;
+		min-height: 1200px;
+		box-sizing: border-box; 
+		-moz-box-sizing: border-box; 
+		-webkit-box-sizing: border-box;
+	}
+
+	h1 {
+	font-size: emCalc(30px);
+	}
+	
+	nav {
+		display: none;
+	}
+	.title {
+		width: 20% !important;
+		z-index: 9999;
+	}	
+	.single-projects .title a {
+		font-size: emCalc(14px) !important;
+	}
+	/*.title:last-child {
+		border-right: 1px solid #ccc;
+	}*/
+	h3 {
+		font-weight: 100;
+	}
+	.tabs { 
+	height: auto;
+	display: block;
+
+	}
+	.content {
+	min-height: 100%;
+	height: auto;
+	min-height: 900px;
+	}
+	.active .title a {
+	text-decoration: line-through !important;
+	display: block;
+	width: 100%;
+	border-bottom: none !important;
+	}
+	.section-container.tabs .content {
+	  display:block !important;
+	  opacity: 0; 
+	}
+	.section-container.tabs>section .title, .section-container.tabs>.section .title {
+		z-index: 998 !important;
+	}
+	.section-container.tabs .active .content{
+	  -webkit-animation: fadeIn 1s;
+	  animation: fadeIn 1s;
+	  opacity: 1;
+	  z-index: 998 !important;
+	  padding: 50px;
+	}
+
+	@-webkit-keyframes fadeIn {
+	    from { opacity: 0; }
+	      to { opacity: 1; }
+	}
+
+	@keyframes fadeIn {
+	    from { opacity: 0; }
+	      to { opacity: 1; }
+	}
+
+	.projectchecklist {
+		text-align: left;
+		li {
+			margin-bottom: 30px;
+			padding-bottom: 40px;
+			width: 100%;
+			clear: both;
+			display: block;
+		/*	label {
+				float: left;
+				display: inline;
+				margin-right: 20px;
+				font-weight: 600;
+			}
+			input[type=checkbox] {
+				float: left;
+				margin-right: 20px;
+				margin-top: 3px;
+				width: 100%;
+			}*/
+		}
+	}
+
+table {
+	width: 100%;
+	text-align: center;
+	border: 1px solid #bbb;
+	th {
+		padding: 30px 25px;
+		text-align: center;
+		color: #fff;
+		background: $stormcloudgrey;
+		border: 1px solid #bbb;
+	}
+	td {
+		padding: 25px;
+		text-align: center;
+		border: 1px solid #eee;
+	}
+	tr.Array {
+	border: 2px solid #333 !important;
+		td {
+			font-weight: bold !important;
+		}
+	}
+	}
+
+}
+
+.projectsmotif {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+}
+
+.logout {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+.checkboxitem {
+	width: 40px;
+	height: 40px;
+	background: #ddd;
+	border-radius: 100%;
+	margin-right: 30px;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.checkboxitem label {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+	background: #333;
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.checkboxitem input[type=checkbox]:checked + label {
+background: #26ca28;
+}
+
+.greybg {
+	background: $offwhite;
+}
+
+.cbwrap {
+	float: left;
+	display: inline;
+}
+
+.labeltext {
+	display: inline-block;
+	float: left;
+	margin-top: 10px;
+	font-size: emCalc(16px);
+}
+
+.ylinedividerlight {
+	height: 100%;
+	width: 1px;
+	background-color: #eee;
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 600px;
+}
+
+.bgoffwhite {
+	background: $offwhite;
+	color: $black;
+}
+
+
