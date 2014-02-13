@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Careers 
+Template Name: Careers Mike C Test
 */
 ?>
 
@@ -8,32 +8,12 @@ Template Name: Careers
 
 <style type="text/css">
 
-#careerdescription{
-text-align:left;
-}
-
-#careerdescription h3 {
-font-family: 'intro_regular';
-font-weight: 100 !important;
-font-size: 40px;
-font-weight: normal;
-padding:30px 0;
-}
-
-#careerdescription li {
-margin-bottom: 30px;
-font-size: 1.125em;
-font-weight: 300;
-line-height: 1.8em;
-margin: 0;
-list-style-image:url('https://dl.dropboxusercontent.com/u/3744614/hexbullet-01.png');
-margin-left: 0;
-padding-left: .8em;
-text-indent: -.8em;
-padding-bottom:25px;
+#careers h3{
+line-height: 175%;
 }
 
 </style>
+
 
 <?php 
  
@@ -105,34 +85,57 @@ while(has_sub_field("work")): ?>
 	</div> <!-- end mainheaderimagebg -->
 	</section>	
 
-	
 
  <?php endif ?>
 <?php endwhile; ?>
 
 
-<div id="careerdescription" class="divsection sectionoffwhite" >
+<div id="careers" class="divsection sectionoffwhite">
 
+<div class="row">
 <div class="verticalcenterwrap">
 	<div class="verticalcenterblock">
-	<div class="clear100"></div>
-		<div class="clear50"></div>
 
-		<div class="large-6 large-centered columns" style="text-align:left;">
+		
+
+		<div class="clear100"></div>
+		<div class="clear50"></div>
+		<div class="large-7 large-centered columns">
 		<?php while (have_posts()) : the_post(); ?> 
 		          	<?php the_content(); ?>
 					<?php endwhile; ?>
 		</div>			
 		
 		<div class="clear100"></div>
+		<div class="large-10 large-centered columns">
+
 		<div class="clear50"></div>
-		
+
+				<ul class="large-block-grid-3 small-block-grid-1 workitems lightlinksnounderline">
+	          
+					<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("post_type=careers&showposts=6&paged=$paged" ); ?>
+					
+					<?php while (have_posts()) : the_post(); ?> 
+		          	<li class="realeasy"><a href="<?php the_permalink() ?>" class="workitem lightlinks realeasy" style="background:url('<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, 'work-thumb'); echo $image_url = $image_url[0]; ?>');"><div class="workitemtitle"><?php the_title() ?></div></a></li>
+					
+					<?php endwhile; ?>
+
+				</ul>
+
+		</div> <!-- end large-8 -->
+
+		<div class="clear100"></div>
+		<div class="clear50"></div>	
+
 	</div> <!-- end verticalcenterblock -->
 </div> <!-- end verticalcenterwrap -->
-</div>
+</div> <!-- end row -->
 
 <div class="clear0"></div>
 
+</div> <!-- end div section -->
+
+	
 
 <div class="clear0"></div>
 
