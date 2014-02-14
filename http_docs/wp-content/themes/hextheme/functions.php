@@ -282,4 +282,17 @@ add_filter('login_errors', 'wrong_login');
 
 
 
+function short_title($after = null, $length) {
+	$mytitle = get_the_title();
+	$size = strlen($mytitle);
+	if($size>$length) {
+		$mytitle = substr($mytitle, 0, $length);
+		$mytitle = explode(' ',$mytitle);
+		array_pop($mytitle);
+		$mytitle = implode(" ",$mytitle).$after;
+	}
+	return $mytitle;
+}
+
+
 ?>

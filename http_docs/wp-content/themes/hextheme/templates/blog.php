@@ -7,6 +7,45 @@ Template Name: Blog
 <?php get_header(); ?>
 
 <style type="text/css">
+
+
+div.pagination {
+		padding: 3px;
+		margin: 3px;
+		text-align:center;
+}
+
+div.pagination a, div.pagination span.pages, div.pagination span.dots, div.pagination span.current {
+-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+margin: 1px 2px;
+padding: 10px 20px;
+display: inline-block;
+text-decoration: none !important;
+color: #333 !important;
+font-size: smaller !important;
+font-family: proximanova, Helvetica, Arial, sans-serif;
+background-color: #fff;
+text-transform: uppercase;
+font-weight: 700;
+}
+
+div.pagination a:hover, div.pagination a:focus {
+  border-color: #fff;
+  background-color: #fdfdfd;
+}
+
+div.pagination span.current {
+  -moz-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.75);
+  -o-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.75);
+  border-color: #505050 !important;
+  color: #f2f2f2 !important;
+  background-color: #73c775;
+}
+
+
+
 	.blog-wrap{
 		min-height:350px;
 	}
@@ -47,16 +86,15 @@ top: -5px;border-bottom: 9px solid #bbb;
 position: relative; -webkit-transition-duration: 0.3s;      -webkit-transition-timing-function: ease-in-out; -moz-transition-duration: 0.3s;      -moz-transition-timing-function: ease-in-out; transition-duration: 0.3s;      transition-timing-function: ease-in-out;
 }
 
-	.whats-happening-image {
-		max-width: 345px;
-		max-height: 240px;
-		overflow: hidden;
+.whats-happening-image {
+
+overflow: hidden;
 		}
 
 	.blog-title{
 		text-transform: uppercase;font-weight: 700; text-align: center;
 display: block;
-height: 63px;
+height: 90px;
 overflow-y: hidden;
 	}
 	.blog-prev{
@@ -76,6 +114,17 @@ overflow-y: hidden;
 	.blog-meta{
 		text-align: center;
 	}
+
+	.pagination{
+		clear:both;
+		margin-top:50px !important;
+	}
+
+	.posts-container{
+		clear:both;
+		overflow:auto;
+	}
+
 </style>
 
 
@@ -105,10 +154,17 @@ overflow-y: hidden;
 
 <div class="blog-list">
 <div class="clear100"></div>
-	<div class="large-10 large-centered columns">	
+	<div class="large-10 large-centered columns">
+	<div class="posts-container">	
 
-		<?php $loop = new WP_Query( array( 'category_name' =>'blog','posts_per_page' => 6 ) ); ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+<?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array( 'category_name' => 'blog', 'posts_per_page' => 6, 'paged' => $paged );
+query_posts($args);
+if ( have_posts() ) :
+while(have_posts()) : the_post(); ?>
+
+
 
 			<div class="large-4 columns blog-wrap">
 		        <div class="whats-happening-image rollover">
@@ -122,7 +178,7 @@ overflow-y: hidden;
 		               <?php } ?>
 		          </div> <!-- end blog image -->
 			<div class="blog-prev">
-		     <a href="<?php the_permalink() ?>"><h3 class="blog-title"><?php the_title() ?></h3></a>
+		     <a href="<?php the_permalink() ?>"><h3 class="blog-title"><?php echo short_title('...', 40); ?></h3></a>
 		    	<div class="blog-meta"> <span>		<?php
 			$i = 0;
 			foreach (get_the_category() as $category){
@@ -137,12 +193,18 @@ overflow-y: hidden;
 			
 			</div>
 
+	<?php endwhile; ?>
+<?php endif; ?>
 
-<?php endwhile; ?>
+ </div>
+              		
+<?php if(function_exists('wp_simple_pagination')) {
+    wp_simple_pagination();
+} ?> 
 
-              	<div class="pagination">
-		 <?php wp_simple_pagination(); ?>
-	</div> <!-- end pagination -->
+
+
+
 
 <?php wp_reset_query(); ?>
 </div>

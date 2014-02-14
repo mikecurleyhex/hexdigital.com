@@ -6,13 +6,7 @@ Template Name: Careers Mike C Test
 
 <?php get_header(); ?>
 
-<style type="text/css">
 
-#careers h3{
-line-height: 175%;
-}
-
-</style>
 
 
 <?php 

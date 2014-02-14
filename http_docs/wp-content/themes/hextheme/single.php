@@ -1,55 +1,76 @@
 <?php get_header('blog'); ?>
 
+<?php the_post(); ?>
 <style>
-nav{
-	display: none;
+
+.blogcontent{
+	color:#eee;
+}
+.blogcontent p{
+font-size:0.8em;
 }
 
-.blog-page-title{
-	text-transform: uppercase;
-	font-weight: 700;
-	text-align: left;
-	color: #fff;
+.blogcontent li {
+	margin-bottom: 30px;
+	font-size: .8em;
+	margin: 0;
+	list-style-image:url('http://www.hexdigital.com/wp-content/uploads/2014/02/hexbulletsmall.png');
+	margin-left: 1em;
+	padding-bottom:25px;
 }
 
-.blog-meta{
-	color: #fff;
-	text-transform: uppercase;
+.blogcontent strong, b {
+	font-weight: 700 !important;
+	font:bold;
 }
 
-.blog-left{
-	padding: 20px 50px 20px 50px;
+.blogintrotext{
+	line-height:175%;
 }
 
-.blog-right{
-	padding: 200px 50px 20px 50px;
+.blogcontent{
+	color:#333;
 }
 
-.backtoblog{
-	color: #fff !important;
-	text-transform: uppercase;
-	font-weight: 700;
+.blogcontent .section-divider{
+width: 100%;
+height: 1px;
+display: block;
+background-color: #ccc;
+margin: 80px auto;
 }
 
-.backtoblog span{
-	position: relative;
-display: inline-block;
-top: 4px;
+.blogcontent a{
+color: #2ba6cb;
+text-decoration: none;
+line-height: inherit;
 }
+
+.blogcontent a:hover{
+color: #333;
+text-decoration: none;
+line-height: inherit;
+}
+
+.blogcontent .simplesocialbuttons{
+	margin:80px auto 0 0 !important;
+}
+
+.blog-right .socialcubes{
+	z-index:0;
+}
+
 </style>
 
-<?php the_post(); ?>
-
-
 <div class="row">
-	<div class="large-6 columns blog-left" style="min-height:100%; z-index:9999; position:fixed;  background: url('/wp-content/uploads/2014/02/green.gif') no-repeat center center fixed;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
+	<div class="large-6 columns blog-left" style="min-height:100%; z-index:9999; position:fixed; background: url('/wp-content/uploads/2014/02/green.gif') repeat center center fixed;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
 <?php
 
 if( get_field( "background_image" ) ): ?>
-  background: url('<?php the_field( "background_image" ); ?>') no-repeat center center fixed !important;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
+  background: url('<?php the_field( "background_image" ); ?>') top left no-repeat;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
 
 <?php endif; ?>" >
-
+		<div>
 		<div class="clear30"></div>
 		
 			<div class="blog-nav large-6 columns">
@@ -74,14 +95,26 @@ if( get_field( "background_image" ) ): ?>
 			     $i++;
 			}
 		 ?></span> / <span><?php the_time('F jS, Y') ?> </span></div>
-
+		 </div>
 	</div>
 
 	<div class="large-6 columns blog-right">
 
+	<div class="blogcontent">
+
 		<?php the_content(); ?>
 
-<div class="clear100"></div><div class="clear100"></div>
+		<?php get_ssb($order = array('googleplus' => 3, 'fblike' => 2, 'twitter' => 1)); ?>
+
+	</div>
+
+<div class="clear50"></div>
+
+		<?php comments_template(); ?>
+
+<div class="clear100"></div>
+
+<div class="clear100"></div>
 
 
 <div class="row">

@@ -6,34 +6,7 @@ Template Name: Careers
 
 <?php get_header(); ?>
 
-<style type="text/css">
 
-#careerdescription{
-text-align:left;
-}
-
-#careerdescription h3 {
-font-family: 'intro_regular';
-font-weight: 100 !important;
-font-size: 40px;
-font-weight: normal;
-padding:30px 0;
-}
-
-#careerdescription li {
-margin-bottom: 30px;
-font-size: 1.125em;
-font-weight: 300;
-line-height: 1.8em;
-margin: 0;
-list-style-image:url('https://dl.dropboxusercontent.com/u/3744614/hexbullet-01.png');
-margin-left: 0;
-padding-left: .8em;
-text-indent: -.8em;
-padding-bottom:25px;
-}
-
-</style>
 
 <?php 
  
