@@ -60,10 +60,50 @@ line-height: inherit;
 	z-index:0;
 }
 
+.blog-right{
+overflow-y:scroll !important;
+}
+
+
+body.single-post{
+overflow:auto !important;
+}
+
+footer{
+display:none;
+}
+
+@media only screen and (max-width: 767px) {
+.blog-right{
+overflow-y:visible !important;
+height:auto !important;
+position:static;
+background:none;
+}
+
+.blog-left{
+overflow:hidden !important;
+
+height:100% !important;
+min-height:0px !important;
+
+z-index:-99;
+}
+
+html{
+height:auto !important;
+overflow:visible !important;
+}
+
+body.single-post{
+height:auto !important;
+overflow:visible !important;
+}
+
 </style>
 
 <div class="row">
-	<div class="large-6 columns blog-left" style="min-height:100%; z-index:9999; position:fixed; background: url('/wp-content/uploads/2014/02/green.gif') repeat center center fixed;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
+	<div class="large-6 columns blog-left" style="min-height:100%; z-index:-; position:static ; background: url('/wp-content/uploads/2014/02/green.gif') fixed no-repeat center center;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
 <?php
 
 if( get_field( "background_image" ) ): ?>

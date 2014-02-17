@@ -4,7 +4,7 @@
   
   <meta charset="<?php bloginfo('charset'); ?>" />
 
-  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/style2.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/style5.css" />
   <meta content="True" name="HandheldFriendly">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   

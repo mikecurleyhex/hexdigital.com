@@ -207,7 +207,7 @@ while(has_sub_field("work")): ?>
 				<p class="textblock">
 				<?php the_sub_field("textblock"); ?>
 				</p> <!-- end large-10 -->
-				</div>
+
 		</div> <!-- end verticalcenterblock -->
 		</div> <!-- end verticalcenterwrap -->
 
