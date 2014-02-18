@@ -19,6 +19,7 @@ font-weight:300 !important;
 color: #000;
 text-decoration:underline;
 font-weight:300 !important;
+float:left;
 }
 
 #gform_2 .gfield_label .gfield_required{
@@ -53,6 +54,7 @@ position:relative;
 -webkit-box-shadow:3px 3px 0px rgba(50,50,50,0.4);-moz-box-shadow:3px 3px 0px rgba(50,50,50,0.4);box-shadow:3px 3px 0px rgba(50,50,50,0.4);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:0.2s ease-in-out;-moz-transition:0.2s ease-in-out;-ms-transition:0.2s ease-in-out;-webkit-transition:0.2s ease-in-out;-o-transition:0.2s ease-in-out;
 margin:30px 0 10px;
 }
+
 #gform_2 .ginput_container input {
 	position: absolute;
 	top: 0;
@@ -88,7 +90,10 @@ color:#2c2d2d;
 border:0;
 padding:15px;
 font-weight:bold;
+float:left;
+clear:both;
 }
+
 #gform_2 .ginput_container:hover,#gform_2 .ginput_container:focus{
 background:#2c2d2d;
 color:#fff
@@ -98,17 +103,58 @@ color:#fff
 
 #gform_2 .ginput_container:before{
 content:"UPLOAD";
+}
+
+.file-upload-filename{
+float:left;
+margin-top:45px;
+margin-left:30px;
+}
+ 
+ 
+ @media only screen and (max-width: 767px) {
+.file-upload-filename{
+width: 50%;
+text-align: center;
+margin:0;
+float:none;
+}
+
+#gform_2 .ginput_container{
+float:none;
+width:50%;
+}
+
+#gform_2 .gfield_label {
+float:none;
+}
+
+.single-careers .subtitle{
+display:none;
+}
 
 }
 
 
-
-
-
-
-
 </style>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    
+$( "#field_2_2 .ginput_container, #field_2_1 .ginput_container" ).after( "<div class=file-upload-filename>No File Selected</div>" );
 
+
+  $("#input_2_1").change(function () {
+    var fileName = $(this).val().replace('C:\\fakepath\\', '');
+    $("#field_2_1 .file-upload-filename").html(fileName);
+  });
+  
+    $("#input_2_2").change(function () {
+    var fileName = $(this).val().replace('C:\\fakepath\\', '');
+    $("#field_2_2 .file-upload-filename").html(fileName);
+  });
+
+});
+</script>
 
 <?php 
  

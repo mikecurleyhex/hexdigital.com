@@ -69,8 +69,100 @@ body.single-post{
 overflow:auto !important;
 }
 
-footer{
+
+#commentform #submit {
+	position: relative;
+	overflow: hidden;
+		background-color:#ddd;
+font-family:Helvetica, sans-serif;
+cursor:pointer;
+text-align:center;
+text-transform:uppercase;
+font-size:0.8em;
+font-weight:600;
+position:relative;
+-webkit-box-shadow:3px 3px 0px rgba(50,50,50,0.4);-moz-box-shadow:3px 3px 0px rgba(50,50,50,0.4);box-shadow:3px 3px 0px rgba(50,50,50,0.4);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:0.2s ease-in-out;-moz-transition:0.2s ease-in-out;-ms-transition:0.2s ease-in-out;-webkit-transition:0.2s ease-in-out;-o-transition:0.2s ease-in-out;
+margin:30px 0 10px;
+}
+
+
+#commentform #submit:active{
+-webkit-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+-moz-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+}
+
+#commentform #submit:hover{
+transition:0.2s ease-in-out;
+-moz-transition:0.2s ease-in-out;
+-ms-transition:0.2s ease-in-out;
+-webkit-transition:0.2s ease-in-out;
+-o-transition:0.2s ease-in-out
+}
+
+#commentform #submit{
+background:#fbfbfb;
+color:#2c2d2d;
+border:0;
+padding:25px 60px;
+font-weight:bold;
+}
+
+#commentform #submit:hover,#commentform #submit:focus{
+background:#2c2d2d;
+color:#fff
+}
+
+#commentform .form-allowed-tags{
 display:none;
+}
+
+#commentform .comment-form-comment{
+margin-top:15px;
+}
+
+.commentlist {
+margin-top:80px;
+}
+
+.commentlist .vcard{
+display:block;
+border:none;
+border-bottom:1px solid #ccc;
+padding:0 0 20px 0;
+}
+
+.commentlist p{
+font-size:.8em;
+}
+
+.commentlist .commentmetadata{
+margin-bottom:10px;
+font-size:.8em;
+text-transform:uppercase;
+}
+
+#commentsection a{
+color: #2ba6cb;
+text-decoration: none;
+line-height: inherit;
+}
+
+#commentsection a:hover{
+color: #333;
+text-decoration: none;
+line-height: inherit;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url, .comment-form-comment{
+margin-bottom:0px;
+}
+
+.comment-form-author label, .comment-form-email label, .comment-form-url label, .comment-form-comment label{
+text-transform: uppercase;
+font-size: .75em;
+line-height: 1.5em;
+color:#aaa;
 }
 
 @media only screen and (max-width: 767px) {
@@ -82,22 +174,9 @@ background:none;
 }
 
 .blog-left{
-overflow:hidden !important;
-
-height:100% !important;
+height:auto !important;
 min-height:0px !important;
-
-z-index:-99;
 }
-
-html{
-height:auto !important;
-overflow:visible !important;
-}
-
-body.single-post{
-height:auto !important;
-overflow:visible !important;
 }
 
 </style>
@@ -130,11 +209,12 @@ if( get_field( "background_image" ) ): ?>
 			foreach (get_the_category() as $category){
 				if($i < 2) {
 			echo $category->cat_name;
-			echo " - ";
+			
 			 }
 			     $i++;
 			}
 		 ?></span> / <span><?php the_time('F jS, Y') ?> </span></div>
+		 <div class="clear50"></div>
 		 </div>
 	</div>
 
@@ -150,7 +230,7 @@ if( get_field( "background_image" ) ): ?>
 
 <div class="clear50"></div>
 
-		<?php comments_template(); ?>
+<?php comments_template(); ?>
 
 <div class="clear100"></div>
 
@@ -196,7 +276,7 @@ if( get_field( "background_image" ) ): ?>
 
 	<div class="clear50"></div>
 
-	<a href="#" class="hexbutton hexbuttonlight hexbuttoncenter" data-reveal-id="requestaquote">REQUEST A QUOTE</a>
+	<a href="#" class="hexbutton hexbuttonlight hexbuttoncenter" data-reveal-id="requestaquote">REQUEST&nbspA&nbspQUOTE</a>
 
 	<div class="clear100"></div>
 
@@ -218,4 +298,3 @@ if( get_field( "background_image" ) ): ?>
 
 
 <div class="clear0"></div>
-<?php get_footer('blog'); ?>

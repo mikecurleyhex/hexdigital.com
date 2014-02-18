@@ -1,0 +1,330 @@
+#policy-info .large-8{
+text-align:left;
+}
+
+#policy-info strong{
+font-weight:bold !important;
+}
+
+#policy-info em{
+font-style:italic !important;
+}
+
+#policy-info p{
+font-size:.8em;
+line-height:1.8em;
+}
+
+#policy-info h1, #policy-info h2, #policy-info h3, #policy-info h4, #policy-info ul{
+margin-bottom:15px;
+}
+
+#policy-info li{
+margin-bottom: 15px;
+font-size: .8em;
+margin: 0;
+list-style-image: url('http://www.hexdigital.com/wp-content/uploads/2014/02/hexbulletsmall.png');
+margin-left: 1em;
+
+line-height:1.8em;
+}
+
+#policy-info ul{
+padding-bottom: 25px;
+}
+
+
+#policy-info a{
+color: #2ba6cb;
+text-decoration: none;
+line-height: inherit;
+}
+
+#policy-info a:hover{
+color: #333;
+text-decoration: none;
+line-height: inherit;
+}
+
+.blogcontent{
+	color:#eee;
+}
+.blogcontent p{
+font-size:0.8em;
+}
+
+.blogcontent li {
+	margin-bottom: 30px;
+	font-size: .8em;
+	margin: 0;
+	list-style-image:url('http://www.hexdigital.com/wp-content/uploads/2014/02/hexbulletsmall.png');
+	margin-left: 1em;
+	padding-bottom:25px;
+}
+
+.blogcontent strong, b {
+	font-weight: 700 !important;
+	font:bold;
+}
+
+.blogintrotext{
+	line-height:175%;
+}
+
+.blogcontent{
+	color:#333;
+}
+
+.blogcontent .section-divider{
+width: 100%;
+height: 1px;
+display: block;
+background-color: #ccc;
+margin: 80px auto;
+}
+
+.blogcontent a{
+color: #2ba6cb;
+text-decoration: none;
+line-height: inherit;
+}
+
+.blogcontent a:hover{
+color: #333;
+text-decoration: none;
+line-height: inherit;
+}
+
+.blogcontent .simplesocialbuttons{
+	margin:80px auto 0 0 !important;
+}
+
+.blog-right .socialcubes{
+	z-index:0;
+}
+
+.blog-right{
+overflow-y:scroll !important;
+}
+
+
+body.single-post{
+overflow:auto !important;
+}
+
+footer.single-post{
+display:none;
+}
+
+
+#commentform #submit {
+	position: relative;
+	overflow: hidden;
+		background-color:#ddd;
+font-family:Helvetica, sans-serif;
+cursor:pointer;
+text-align:center;
+text-transform:uppercase;
+font-size:0.8em;
+font-weight:600;
+position:relative;
+-webkit-box-shadow:3px 3px 0px rgba(50,50,50,0.4);-moz-box-shadow:3px 3px 0px rgba(50,50,50,0.4);box-shadow:3px 3px 0px rgba(50,50,50,0.4);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:0.2s ease-in-out;-moz-transition:0.2s ease-in-out;-ms-transition:0.2s ease-in-out;-webkit-transition:0.2s ease-in-out;-o-transition:0.2s ease-in-out;
+margin:30px 0 10px;
+}
+
+
+#commentform #submit:active{
+-webkit-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+-moz-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+}
+
+#commentform #submit:hover{
+transition:0.2s ease-in-out;
+-moz-transition:0.2s ease-in-out;
+-ms-transition:0.2s ease-in-out;
+-webkit-transition:0.2s ease-in-out;
+-o-transition:0.2s ease-in-out
+}
+
+#commentform #submit{
+background:#fbfbfb;
+color:#2c2d2d;
+border:0;
+padding:25px 60px;
+font-weight:bold;
+}
+
+#commentform #submit:hover,#commentform #submit:focus{
+background:#2c2d2d;
+color:#fff
+}
+
+#commentform .form-allowed-tags{
+display:none;
+}
+
+#commentform .comment-form-comment{
+margin-top:15px;
+}
+
+.commentlist {
+margin-top:80px;
+}
+
+.commentlist .vcard{
+display:block;
+border:none;
+border-bottom:1px solid #ccc;
+padding:0 0 20px 0;
+}
+
+.commentlist p{
+font-size:.8em;
+}
+
+.commentlist .commentmetadata{
+margin-bottom:10px;
+font-size:.8em;
+text-transform:uppercase;
+}
+
+#commentsection a{
+color: #2ba6cb;
+text-decoration: none;
+line-height: inherit;
+}
+
+#commentsection a:hover{
+color: #333;
+text-decoration: none;
+line-height: inherit;
+}
+
+@media only screen and (max-width: 767px) {
+.single-post .blog-right{
+overflow-y:visible !important;
+height:auto !important;
+position:static;
+background:none;
+}
+
+.single-post .blog-left{
+overflow:hidden !important;
+height:100% !important;
+min-height:0px !important;
+z-index:-99;
+}
+
+
+body.single-post{
+height:auto !important;
+overflow:visible !important;
+}
+}
+
+#gform_2 .validation_message{
+font-weight:300;
+}
+
+#gform_2 div.validation_error {
+font-weight:300 !important;
+}
+
+#gform_2 .gfield_label {
+color: #000;
+text-decoration:underline;
+font-weight:300 !important;
+float:left;
+}
+
+#gform_2 .gfield_label .gfield_required{
+text-decoration:none;
+}
+
+#gform_2 .gfield_error .gfield_label {
+color: #790000;
+}
+
+#gform_2 .gfield_description{
+font-family:proxima-nova, Helvetica, Arial, sans-serif !important;
+}
+
+#gform_2 .cover-letter, .cv-resume{
+margin: 40px 0;
+padding:0;
+}
+
+#gform_2 .ginput_container {
+	position: relative;
+	overflow: hidden;
+		background-color:#ddd;
+font-family:Helvetica, sans-serif;
+cursor:pointer;
+width:194px;
+text-align:center;
+text-transform:uppercase;
+font-size:0.875em;
+font-weight:600;
+position:relative;
+-webkit-box-shadow:3px 3px 0px rgba(50,50,50,0.4);-moz-box-shadow:3px 3px 0px rgba(50,50,50,0.4);box-shadow:3px 3px 0px rgba(50,50,50,0.4);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:0.2s ease-in-out;-moz-transition:0.2s ease-in-out;-ms-transition:0.2s ease-in-out;-webkit-transition:0.2s ease-in-out;-o-transition:0.2s ease-in-out;
+margin:30px 0 10px;
+}
+
+#gform_2 .ginput_container input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height:100%;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	
+}
+
+#gform_2 .ginput_container:active{
+-webkit-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+-moz-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
+}
+
+#gform_2 .ginput_container:hover{
+transition:0.2s ease-in-out;
+-moz-transition:0.2s ease-in-out;
+-ms-transition:0.2s ease-in-out;
+-webkit-transition:0.2s ease-in-out;
+-o-transition:0.2s ease-in-out
+}
+
+#gform_2 .ginput_container{
+background:#fbfbfb;
+color:#2c2d2d;
+border:0;
+padding:15px;
+font-weight:bold;
+float:left;
+clear:both;
+}
+
+#gform_2 .ginput_container:hover,#gform_2 .ginput_container:focus{
+background:#2c2d2d;
+color:#fff
+}
+
+
+
+#gform_2 .ginput_container:before{
+content:"UPLOAD";
+
+}
+
+.file-upload-filename{
+float:left;
+margin-top:45px;
+margin-left:30px;
+}
+ 
