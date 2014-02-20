@@ -13,7 +13,7 @@ Template Name: Template Home
 	<div class="verticalcenterwrap">
 	<div class="verticalcenterblock">	
 
-		<h1 class="textblack textxxl textcenter textlight maintitle noselect logo1 cursordefault">Hex Digital</h1>
+		<h1 class="textblack textxxl textcenter maintitle noselect logo1 cursordefault">Hex Digital</h1>
 		<h2 class="strapline textproximanova">BUILDING A BETTER WEB</h2>
 		<!--<h1 class="textblack textxxl textcenter textlight maintitle noselect cursordefault">good things come <div class="clear0"></div>to those who wait</h1> -->
 
@@ -25,7 +25,7 @@ Template Name: Template Home
 			<div class="navarrow"></div>
 		</a> <!-- end navarrowcircle -->
 		 <div class="hide-for-small">
-		   <a href="/" class="headermotif hexmotiflight realeasy rotate"><img src="<?php bloginfo('template_directory'); ?>/images/hexmotiflight.png"/></a>
+		   <a href="/" class="headermotif hexmotiflight realeasy rotate"><img src="<?php bloginfo('template_directory'); ?>/images/hexmotifdark.png"/></a>
 		 </div> <!-- end hide-for-small -->
 
 	</div> <!-- end verticalcenterblock -->

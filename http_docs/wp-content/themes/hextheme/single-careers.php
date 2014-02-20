@@ -5,143 +5,13 @@ Template Name: Careers
 ?>
 
 <?php get_header(); ?>
-<style>
-
-#gform_2 .validation_message{
-font-weight:300;
-}
-
-#gform_2 div.validation_error {
-font-weight:300 !important;
-}
-
-#gform_2 .gfield_label {
-color: #000;
-text-decoration:underline;
-font-weight:300 !important;
-float:left;
-}
-
-#gform_2 .gfield_label .gfield_required{
-text-decoration:none;
-}
-
-#gform_2 .gfield_error .gfield_label {
-color: #790000;
-}
-
-#gform_2 .gfield_description{
-font-family:proxima-nova, Helvetica, Arial, sans-serif !important;
-}
-
-#gform_2 .cover-letter, .cv-resume{
-margin: 40px 0;
-padding:0;
-}
-
-#gform_2 .ginput_container {
-	position: relative;
-	overflow: hidden;
-		background-color:#ddd;
-font-family:Helvetica, sans-serif;
-cursor:pointer;
-width:194px;
-text-align:center;
-text-transform:uppercase;
-font-size:0.875em;
-font-weight:600;
-position:relative;
--webkit-box-shadow:3px 3px 0px rgba(50,50,50,0.4);-moz-box-shadow:3px 3px 0px rgba(50,50,50,0.4);box-shadow:3px 3px 0px rgba(50,50,50,0.4);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:0.2s ease-in-out;-moz-transition:0.2s ease-in-out;-ms-transition:0.2s ease-in-out;-webkit-transition:0.2s ease-in-out;-o-transition:0.2s ease-in-out;
-margin:30px 0 10px;
-}
-
-#gform_2 .ginput_container input {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
-	padding: 0;
-	width:100%;
-	height:100%;
-	font-size: 20px;
-	cursor: pointer;
-	opacity: 0;
-	filter: alpha(opacity=0);
-	
-}
-
-#gform_2 .ginput_container:active{
--webkit-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
--moz-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
-box-shadow:inset 3px 3px 0px rgba(50,50,50,0.4);
-}
-
-#gform_2 .ginput_container:hover{
-transition:0.2s ease-in-out;
--moz-transition:0.2s ease-in-out;
--ms-transition:0.2s ease-in-out;
--webkit-transition:0.2s ease-in-out;
--o-transition:0.2s ease-in-out
-}
-
-#gform_2 .ginput_container{
-background:#fbfbfb;
-color:#2c2d2d;
-border:0;
-padding:15px;
-font-weight:bold;
-float:left;
-clear:both;
-}
-
-#gform_2 .ginput_container:hover,#gform_2 .ginput_container:focus{
-background:#2c2d2d;
-color:#fff
-}
 
 
-
-#gform_2 .ginput_container:before{
-content:"UPLOAD";
-}
-
-.file-upload-filename{
-float:left;
-margin-top:45px;
-margin-left:30px;
-}
- 
- 
- @media only screen and (max-width: 767px) {
-.file-upload-filename{
-width: 50%;
-text-align: center;
-margin:0;
-float:none;
-}
-
-#gform_2 .ginput_container{
-float:none;
-width:50%;
-}
-
-#gform_2 .gfield_label {
-float:none;
-}
-
-.single-careers .subtitle{
-display:none;
-}
-
-}
-
-
-</style>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-    
+     
 $( "#field_2_2 .ginput_container, #field_2_1 .ginput_container" ).after( "<div class=file-upload-filename>No File Selected</div>" );
-
+//Create an extra div in the Gravity forms for uploading CV/Cover Letter
 
   $("#input_2_1").change(function () {
     var fileName = $(this).val().replace('C:\\fakepath\\', '');
@@ -152,6 +22,7 @@ $( "#field_2_2 .ginput_container, #field_2_1 .ginput_container" ).after( "<div c
     var fileName = $(this).val().replace('C:\\fakepath\\', '');
     $("#field_2_2 .file-upload-filename").html(fileName);
   });
+  //and then update on file selection to show the uploaded file's name
 
 });
 </script>

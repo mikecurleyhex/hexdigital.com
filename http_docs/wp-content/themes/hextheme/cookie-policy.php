@@ -6,57 +6,6 @@ Template Name: Cookie Policy
 
 <?php get_header(); ?>
 
-<style>
-
-#policy-info .large-8{
-text-align:left;
-}
-
-#policy-info strong{
-font-weight:bold !important;
-}
-
-#policy-info em{
-font-style:italic !important;
-}
-
-#policy-info p{
-font-size:.8em;
-line-height:1.8em;
-}
-
-#policy-info h1, #policy-info h2, #policy-info h3, #policy-info h4, #policy-info ul{
-margin-bottom:15px;
-}
-
-#policy-info li{
-margin-bottom: 15px;
-font-size: .8em;
-margin: 0;
-list-style-image: url('http://www.hexdigital.com/wp-content/uploads/2014/02/hexbulletsmall.png');
-margin-left: 1em;
-
-line-height:1.8em;
-}
-
-#policy-info ul{
-padding-bottom: 25px;
-}
-
-
-#policy-info a{
-color: #2ba6cb;
-text-decoration: none;
-line-height: inherit;
-}
-
-#policy-info a:hover{
-color: #333;
-text-decoration: none;
-line-height: inherit;
-}
-
-</style>
 
 <?php 
  

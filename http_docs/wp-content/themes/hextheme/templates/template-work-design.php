@@ -6,324 +6,387 @@ Template Name: Design
 
 <?php get_header(); ?>
 
-
+<?php $idnumber = 0 //create variable for section id numbers ?> 
 
 <?php 
- 
+
 /*
 *  Loop through a Flexible Content field and display it's content with different views for different layouts
 */
- 
+
 while(has_sub_field("work")): ?>
  
 
-	<?php if(get_row_layout() == "main_header_image"): ?>
-	<section class="worksection mainheaderimage">
-		<div class="mainheaderimagebg" style="background: url(<?php the_sub_field("main_header_image"); ?>)">
- 
 
-		<div class="verticalcenterwrap">
-		<div class="verticalcenterblock">
+<?php if(get_row_layout() == "main_header_image"):  ?>
+	
+			<section id="<?php echo $idnumber; //echo current id variable to section id ?>" class="worksection mainheaderimage"> 
+			<?php $idnumber++ //increment id var by one so that next section is numbered one higher ?> 
 
-		<h1 class="workmaintitle textintro">
-			<?php echo get_the_title($ID); ?> 
-		</h1>
+				<div class="mainheaderimagebg" style="background: url(<?php the_sub_field("main_header_image"); ?>)">
+		 			<div class="verticalcenterwrap">
+						<div class="verticalcenterblock">
 
-		<h2 class="subtitle textmedium textcenter">
-			<?php the_sub_field("subtitle"); ?>
-		</h2>
+						<div class="clear100"></div>
 
+							<h1 class="workmaintitle textintro">
+								<?php echo get_the_title($ID); ?> 
+							</h1>
 
-			</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
+							<h2 class="subtitle textmedium textcenter">
+								<?php the_sub_field("subtitle"); ?>
+							</h2>
 
-	</div> <!-- end mainheaderimagebg -->
-	</section>	
- 
-	<?php elseif(get_row_layout() == "lead"): ?>
-	<section class="worksection sectionlead">
-
-		<div class="verticalcenterwrap">
-			<div class="verticalcenterblock">
-
-				<div class="large-8 large-centered small-10 small-centered columns">
-
-				<p class="lead">
-					<?php the_sub_field("lead"); ?>
-				</p>
-
-				</div> <!-- end large-10 -->
-
-			</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
-
-	</section>
-
-	<?php elseif(get_row_layout() == "video"): ?>
-	<div class="divsection worksection videosection">
-
-		<div class="verticalcenterwrap">
-			<div class="verticalcenterblock">
-
-				<div class="large-8 large-centered small-10 small-centered columns">
-
-
-					<div class="videowrap">
-
-
-					<?php if(get_sub_field('video_title')): ?>
-
-
-						<h2 class="textintro"><?php echo get_sub_field("video_title"); ?></h2>
 						<div class="clear50"></div>
-					
+						<div class="clear30"></div>
+						<div class="clear30"></div>
 
-					<?php endif; ?>
+						<a href="#<?php echo $idnumber; //create nav button with destination matching the next section's id ?>" class="navarrowcircle2 realeasy"> 
+							<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
 
-
-
-				<div class="videovimeo">
-
-					<?php if(get_sub_field('video_vimeo')): ?>
-
-						<div class="flex-video widescreen vimeo">
-							<iframe src="http://player.vimeo.com/video/<?php echo get_sub_field("video_vimeo"); ?>?title=0&amp;byline=0&amp;portrait=0" width="100%" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
-
-				<div class="videoyoutube">
-
-					<?php if(get_sub_field('video_youtube')): ?>
-
-						<div class="flex-video widescreen">
-							<iframe width="100%" height="400" src="http://www.youtube.com/embed/<?php echo get_sub_field("video_youtube"); ?>" frameborder="0" allowfullscreen></iframe>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
-
-				</div> <!-- end videowrap -->
+						</div> <!-- end verticalcenterblock -->
+					</div> <!-- end verticalcenterwrap -->
+				</div> <!-- end mainheaderimagebg -->
+			</section>	
+ 
 
 
-				</div> <!-- end large-10 -->
+<?php elseif(get_row_layout() == "lead"): ?>
 
-			</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
+			<section id="<?php echo $idnumber; ?>" class="worksection sectionlead">
+			<?php $idnumber++ ?>
 
-	</div> <!-- end div section -->
+				<div class="verticalcenterwrap">
+					<div class="verticalcenterblock">
+
+						<div class="large-8 large-centered small-10 small-centered columns">
+
+						<div class="clear100"></div>
+						<div class="clear50"></div>
+
+						<p class="lead">
+							<?php the_sub_field("lead"); ?>
+						</p>
+
+						<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+							<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
+
+						</div> <!-- end large-10 -->
+
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
+
+			</section>
+
+
+
+<?php elseif(get_row_layout() == "video"): ?>
+
+			<div id="<?php echo $idnumber; ?>" class="divsection worksection videosection">
+			<?php $idnumber++ ?>
+
+				<div class="verticalcenterwrap">
+					<div class="verticalcenterblock">
+
+						<div class="large-8 large-centered small-10 small-centered columns">
+
+
+							<div class="videowrap">
+
+
+								<?php if(get_sub_field('video_title')): ?>
+									<h2 class="textintro"><?php echo get_sub_field("video_title"); ?></h2>
+									<div class="clear50"></div>
+								<?php endif; ?>
+
+
+								<div class="videovimeo">
+									<?php if(get_sub_field('video_vimeo')): ?>
+										<div class="flex-video widescreen vimeo">
+											<iframe src="http://player.vimeo.com/video/<?php echo get_sub_field("video_vimeo"); ?>?title=0&amp;byline=0&amp;portrait=0" width="100%" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+										</div>
+									<?php endif; ?>
+								</div>
+
+
+								<div class="videoyoutube">
+									<?php if(get_sub_field('video_youtube')): ?>
+										<div class="flex-video widescreen">
+											<iframe width="100%" height="400" src="http://www.youtube.com/embed/<?php echo get_sub_field("video_youtube"); ?>" frameborder="0" allowfullscreen></iframe>
+										</div>
+									<?php endif; ?>
+								</div>
+
+
+							</div> <!-- end videowrap -->
+
+
+						</div> <!-- end large-10 -->
+
+						<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+							<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
+
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
+
+			</div> <!-- end div section -->
+
+
 
 <?php elseif(get_row_layout() == "stats"): ?>
 
-	<section class="worksection statwrap sectiontextblock">
+			<section id="<?php echo $idnumber; ?>" class="worksection statwrap sectiontextblock">
+			<?php $idnumber++ ?>
+				<div class="verticalcenterwrap">	
+					<div class="verticalcenterblock">
 
-		<div class="verticalcenterwrap">	
-		<div class="verticalcenterblock">
+						<div class="large-8 large-centered small-10 small-centered columns">
 
-				<div class="large-8 large-centered small-10 small-centered columns">
+							<div class="clear50"></div>
+							<div class="clear50"></div>
+							<div class="clear100"></div>
 
+							<?php if(get_sub_field('stats_block_title_1')): ?>
 
-				<?php if(get_sub_field('stats_block_title_1')): ?>
+								<div class="large-4 columns">
 
-				<div class="large-4 columns">
+									<h3 class="textblocktitle  textlarge">
+									<?php the_sub_field("stats_block_title_1"); ?>
+									<div class="clear5"></div>
+									</h3> <!-- end large-10 -->
 
-					<h3 class="textblocktitle  textlarge">
-					<?php the_sub_field("stats_block_title_1"); ?>
-					<div class="clear5"></div>
-					</h3> <!-- end large-10 -->
+							<?php endif ?>
 
-				<?php endif ?>
+									<p class="textblock">
+									<?php the_sub_field("textblock_1"); ?>
+									</p> <!-- end large-10 -->
 
-				<p class="textblock">
-				<?php the_sub_field("textblock_1"); ?>
-				</p> <!-- end large-10 -->
-
-				</div>
-
-
-
-				<?php if(get_sub_field('stats_block_title_2')): ?>
-
-				<div class="large-4 columns">
-
-					<h3 class="textblocktitle  textlarge">
-					<?php the_sub_field("stats_block_title_2"); ?>
-					<div class="clear5"></div>
-					</h3> <!-- end large-10 -->
-
-				<?php endif ?>
-
-				<p class="textblock">
-				<?php the_sub_field("text_block_2"); ?>
-				</p> <!-- end large-10 -->
-
-			</div>
-
-				<?php if(get_sub_field('stats_block_title_3')): ?>
-
-				<div class="large-4 columns">
-
-					<h3 class="textblocktitle  textlarge">
-					<?php the_sub_field("stats_block_title_3"); ?>
-					<div class="clear5"></div>
-					</h3> <!-- end large-10 -->
-
-				<?php endif ?>
-
-				<p class="textblock">
-				<?php the_sub_field("text_block_3"); ?>
-				</p> <!-- end large-10 -->
-
-			</div>
+								</div>
 
 
+							<?php if(get_sub_field('stats_block_title_2')): ?>
 
-		</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
+								<div class="large-4 columns">
 
-	</section>	
-	<?php elseif(get_row_layout() == "textblock"): ?>
+									<h3 class="textblocktitle  textlarge">
+									<?php the_sub_field("stats_block_title_2"); ?>
+									<div class="clear5"></div>
+									</h3> <!-- end large-10 -->
 
-	<section class="worksection sectiontextblock">
+							<?php endif ?>
 
-		<div class="verticalcenterwrap">	
-		<div class="verticalcenterblock">
+									<p class="textblock">
+									<?php the_sub_field("text_block_2"); ?>
+									</p> <!-- end large-10 -->
 
-				<div class="large-8 large-centered small-10 small-centered columns">
+								</div>
+
+							<?php if(get_sub_field('stats_block_title_3')): ?>
+
+								<div class="large-4 columns">
+
+									<h3 class="textblocktitle  textlarge">
+									<?php the_sub_field("stats_block_title_3"); ?>
+									<div class="clear5"></div>
+									</h3> <!-- end large-10 -->
+
+							<?php endif ?>
+
+								<p class="textblock">
+								<?php the_sub_field("text_block_3"); ?>
+								</p> <!-- end large-10 -->
+
+								</div>
+
+						</div>
+						
+						<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+							<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
 
 
-				<?php if(get_sub_field('text_block_title')): ?>
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
 
-					<h3 class="textblocktitle textintro textlarge">
-					<?php the_sub_field("text_block_title"); ?>
-					<div class="clear30"></div>
-					</h3> <!-- end large-10 -->
+			</section>	
 
-				<?php endif ?>
 
-				<p class="textblock">
-				<?php the_sub_field("textblock"); ?>
-				</p> <!-- end large-10 -->
 
-		</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
+<?php elseif(get_row_layout() == "textblock"): ?>
+	
+			<section id="<?php echo $idnumber; ?>" class="worksection sectiontextblock">
+			<?php $idnumber++ ?>
+				<div class="verticalcenterwrap">	
+					<div class="verticalcenterblock">
 
-	</section>	
+						<div class="large-8 large-centered small-10 small-centered columns">
+
+							<div class="clear100"></div>
+
+							<?php if(get_sub_field('text_block_title')): ?>
+
+								<h3 class="textblocktitle textintro textlarge">
+								<?php the_sub_field("text_block_title"); ?>
+								<div class="clear30"></div>
+								</h3> <!-- end large-10 -->
+
+							<?php endif ?>
+
+								<p class="textblock">
+								<?php the_sub_field("textblock"); ?>
+								</p> <!-- end large-10 -->
+
+							<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+								<div class="navarrow"></div>
+							</a> <!-- end navarrowcircle -->
+
+						</div>
+
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
+
+			</section>	
  
-	<?php elseif(get_row_layout() == "image_section"): ?>
-
-		<section class="sectionimage section-header" style="background: url('<?php the_sub_field("image_section"); ?>')">
-
-		</section>
 
 
-	<?php elseif(get_row_layout() == "image_small"): ?>
+<?php elseif(get_row_layout() == "image_section"): ?>
 
-		<div class="workimagesmall">
+			<section id="<?php echo $idnumber; ?>" class="sectionimage section-header" style="background: url('<?php the_sub_field("image_section"); ?>')">
+			<?php $idnumber++ ?>
 
-			<div class="workimagesmall" style="background: url(<?php the_sub_field("image_small"); ?>)"></div> <!-- end workimage -->
+					<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+						<div class="navarrow"></div>
+					</a> <!-- end navarrowcircle -->
 
-		</div> <!-- workimagesmall -->
+			</section>
+
+
+<?php elseif(get_row_layout() == "image_small"): ?>
+
+			<div id="<?php echo $idnumber; ?>" class="workimagesmall">
+			<?php $idnumber++ ?>
+				<div class="workimagesmall" style="background: url(<?php the_sub_field("image_small"); ?>)"></div> <!-- end workimage -->
+
+			</div> <!-- workimagesmall -->
 
 
 
 
-	<?php elseif(get_row_layout() == "heading"): ?>
-	<section class="sectionstorm">
+<?php elseif(get_row_layout() == "heading"): ?>
+			<section id="<?php echo $idnumber; ?>" class="sectionstorm">
+			<?php $idnumber++ ?>
+				<div class="verticalcenterwrap">
+					<div class="verticalcenterblock">
+
+						<div class="clear100"></div>
+						<div class="clear30"></div>
+
+						<h3 class="heading textintroinline">
+							<?php the_sub_field("heading"); ?>
+						</h3>
+
+						<a href="#<?php echo $idnumber; ?>" class="navarrowcircledark realeasy">
+							<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
+
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
+
+			</section>	
 		
-		<div class="verticalcenterwrap">
-		<div class="verticalcenterblock">
 
-		<h3 class="heading textintroinline">
-			<?php the_sub_field("heading"); ?>
-		</h3>
 
-			</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
 
-	</div> <!-- end mainheaderimagebg -->
-	</section>	
+<?php elseif(get_row_layout() == "gallery"): ?>
+
+			<section id="<?php echo $idnumber; ?>" class="worksection sectionworkgallery">
+			<?php $idnumber++ ?>
+
+				<div class="gallery">
+					<?php the_sub_field("gallery"); ?>
+				</div> <!-- end gallery -->
+
+				<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+					<div class="navarrow"></div>
+				</a> <!-- end navarrowcircle -->	
+
+			</section>
 		
 
 
+<?php elseif(get_row_layout() == "quote"): ?>
 
-	<?php elseif(get_row_layout() == "gallery"): ?>
+			<section id="<?php echo $idnumber; ?>" class="worksection sectionworkquote">
+			<?php $idnumber++ ?>
+				<div class="verticalcenterwrap">	
+				<div class="verticalcenterblock">
 
-	<section class="worksection sectionworkgallery">
-			<div class="gallery">
-			<?php the_sub_field("gallery"); ?>
-			</div> <!-- end gallery -->
+					<div class="large-8 columns large-centered small-8 small-centered">
 
-	</section>
-		
-	<?php elseif(get_row_layout() == "quote"): ?>
+					<div class="quote">
 
-	<section class="worksection sectionworkquote">
-		
-		<div class="verticalcenterwrap">	
-		<div class="verticalcenterblock">
+						<div class="large-3 columns">
+							<div class="speechmarks">&quot;</div>
+						</div> <!-- large-3 -->
 
-			<div class="large-8 columns large-centered small-8 small-centered">
+						<div class="large-9 columns quotecontent textlarge">
+						<?php the_sub_field("quote"); ?>
+						</div>   <!-- end large-9 -->
 
-			<div class="quote">
+					</div> <!-- end quote -->
 
-				<div class="large-3 columns">
-					<div class="speechmarks">&quot;</div>
-				</div> <!-- large-3 -->
+					</div> <!-- end large-8 -->
+						<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+						<div class="navarrow"></div>
+						</a> <!-- end navarrowcircle -->
+				</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
 
-				<div class="large-9 columns quotecontent textlarge">
-				<?php the_sub_field("quote"); ?>
-				</div>   <!-- end large-9 -->
+			</section>
 
-			</div> <!-- end quote -->
 
-			</div> <!-- end large-8 -->
-
-		</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
-
-	</section>
 
 <?php elseif(get_row_layout() == "view_work"): ?>
 
-	<section class="worksection sectiontextblock">
+			<section id="<?php echo $idnumber; ?>" class="worksection sectiontextblock">
+			<?php $idnumber++ ?>
 
-		<div class="verticalcenterwrap">	
-		<div class="verticalcenterblock">
+				<div class="verticalcenterwrap">	
+					<div class="verticalcenterblock">
 
-				<div class="large-6 large-centered small-10 small-centered columns">
-				
-					<h3 class="textintro textlarge"><?php the_sub_field("view_title"); ?></h3> 
+							<div class="large-6 large-centered small-10 small-centered columns">
+							
+								<h3 class="textintro textlarge"><?php the_sub_field("view_title"); ?></h3> 
 
-					<div class="clear30"></div>
+								<div class="clear30"></div>
 
-					<p class="textblock"><?php the_sub_field("view_copy"); ?></p> 
+								<p class="textblock"><?php the_sub_field("view_copy"); ?></p> 
 
-					<div class="clear30"></div>
+								<div class="clear30"></div>
 
-					<a target="_blank" href="<?php the_sub_field("view_work_url"); ?>" class="hexbutton hexbuttondark"><?php the_sub_field("view_button_label"); ?></a>
+								<a target="_blank" href="<?php the_sub_field("view_work_url"); ?>" class="hexbutton hexbuttondark"><?php the_sub_field("view_button_label"); ?></a>
 
+							</div> <!-- columns -->
 
-				</div> <!-- columns -->
-				
+							<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
+								<div class="navarrow"></div>
+							</a> <!-- end navarrowcircle -->
 
-		</div> <!-- end verticalcenterblock -->
-		</div> <!-- end verticalcenterwrap -->
+					</div> <!-- end verticalcenterblock -->
+				</div> <!-- end verticalcenterwrap -->
 
-	</section>	
-
+			</section>	
 	
-	<?php endif; ?>
- 
+
+<?php endif; ?>
 <?php endwhile; ?>
 
 
-
 <div id="letsgo" class="divsection sectionoffwhite">
-
+<div id="<?php echo $idnumber; ?>">
 <div class="row">
 <div class="verticalcenterwrap">
 	<div class="verticalcenterblock">
@@ -356,7 +419,7 @@ while(has_sub_field("work")): ?>
 	</div> <!-- end verticalcenterblock -->
 </div> <!-- end verticalcenterwrap -->
 </div> <!-- end row -->
-
+</div>
 <div class="clear0"></div>
 
 </div> <!-- end div section -->

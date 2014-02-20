@@ -16,7 +16,7 @@ Template Name: Contact
 		<div class="clear50"></div>
 		<div class="clear30"></div>
 
-		<a href="#" class="hexbutton hexbuttonlight" data-reveal-id="requestaquote">Request a quote</a>
+		<a href="#" class="hexbutton hexbuttonlight" data-reveal-id="requestaquote">Request&nbsp;a&nbsp;quote</a>
 
 		<div class="hide-for-small">
 		   <a href="/" class="headermotif hexmotiflight realeasy rotate"><img src="<?php bloginfo('template_directory'); ?>/images/hexmotiflight.png"/></a>

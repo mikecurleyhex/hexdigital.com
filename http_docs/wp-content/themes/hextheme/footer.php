@@ -41,7 +41,7 @@
 
 	<div class="clear50"></div>
 
-	<a href="#" class="hexbutton hexbuttonlight hexbuttoncenter" data-reveal-id="requestaquote">REQUEST A QUOTE</a>
+	<a href="#" class="hexbutton hexbuttonlight hexbuttoncenter" data-reveal-id="requestaquote">REQUEST&nbsp;A&nbsp; QUOTE</a>
 
 	<div class="clear100"></div>
 

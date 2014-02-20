@@ -4,7 +4,8 @@
   
   <meta charset="<?php bloginfo('charset'); ?>" />
  
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style5.css";/>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" /> 
+
    <meta content="True" name="HandheldFriendly">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   
@@ -59,13 +60,14 @@
         </div> <!-- end hide-for-small -->
 
         <ul class="navbar">
-          <li><a <?php if ( is_page('home')) { echo ' class="active"'; } ?> href="/">home</a></li>
-          <li><a <?php if ( is_page('marketing')) { echo ' class="active"'; } ?> href="/marketing">marketing</a></li>
+          <li><a <?php if ( is_page('home')) { echo ' class="active"'; } ?> href="/"><div class="navlink">home</div></a></li>
+          <li><a <?php if ( is_page('marketing')) { echo ' class="active"'; } ?> href="/marketing"><div class="navlink">marketing</div></a></li>
           
 
 
-          <li><a <?php if ( is_page('design')) { echo ' class="active"'; } ?> href="/design">design</a></li>
-          <li><a <?php if ( is_page('contact')) { echo ' class="active"'; } ?> href="/contact">contact</a></li>
+          <li><a <?php if ( is_page('design')) { echo ' class="active"'; } ?> href="/design"><div class="navlink">design</div></a></li>
+
+          <li><a <?php if ( is_page('contact')) { echo ' class="active"'; } ?> href="/contact"><div class="navlink">contact</div></a></li>
         </ul> <!-- end navlist -->
 
       <div class="hide-for-small">
