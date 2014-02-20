@@ -143,11 +143,8 @@ while(has_sub_field("work")): ?>
 				<div class="verticalcenterwrap">	
 					<div class="verticalcenterblock">
 
+							<div class="clear50"></div>
 						<div class="large-8 large-centered small-10 small-centered columns">
-
-							<div class="clear50"></div>
-							<div class="clear50"></div>
-							<div class="clear100"></div>
 
 							<?php if(get_sub_field('stats_block_title_1')): ?>
 
@@ -202,7 +199,9 @@ while(has_sub_field("work")): ?>
 								</div>
 
 						</div>
-						
+
+							<div class="clear50"></div>
+													
 						<a href="#<?php echo $idnumber; ?>" class="navarrowcircle realeasy">
 							<div class="navarrow"></div>
 						</a> <!-- end navarrowcircle -->

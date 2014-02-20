@@ -25,8 +25,8 @@
 	padding: 5px 10px 6px;
 	color: #fff;
 	text-decoration: none;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
@@ -36,7 +36,7 @@
 	margin: auto 10px;
 }
 .cli-plugin-button:hover {
-	background-color: #111;
+	background-color: #333;
 	color: #fff;
 }
 .cli-plugin-button:active {
@@ -95,4 +95,16 @@
 }
 .yellow.cli-plugin-button:hover {
 	background-color: #fc9200;
+}
+
+#cookie-law-info-bar .buttons {
+display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+
+#cookie-law-info-bar .buttons {
+display: inline-block;
+
+}
 }

@@ -94,7 +94,7 @@ while(has_sub_field("work")): ?>
 
 		<div class="clear100"></div>
 		<div class="clear50"></div>
-		<div class="large-7 large-centered columns">
+		<div class="large-6 large-centered columns">
 		<?php while (have_posts()) : the_post(); ?> 
 		          	<?php the_content(); ?>
 					<?php endwhile; ?>

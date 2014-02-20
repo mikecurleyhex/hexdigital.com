@@ -729,7 +729,7 @@ class Simple_Pagination {
 		if( isset( $this->options['type'] ) && $this->options['type'] == 'comments' ) {
 
 			$wp_query->query_vars['cpage'] > 1 ? $current = $wp_query->query_vars['cpage'] : $current = 1; // Current page
-			$total               = $wp_query->comment_count; // Total comments
+			$total = get_comment_pages_count(); // Total comments
 			$this->add_fragment  = '#comments'; // Add fragment to URL
 			$range               = $this->options['comments_range']; // Range
 			$anchor              = $this->options['comments_anchor']; // Anchor
