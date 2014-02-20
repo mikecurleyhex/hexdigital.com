@@ -610,4 +610,7 @@ ul.children{
 	margin-left:0;
 }
 
+.blogcontent .simplesocialbuttons {
+	display:none;
+}
 }
