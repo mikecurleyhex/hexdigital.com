@@ -170,6 +170,9 @@ height:auto;
 
 div.pagination a, div.pagination span.pages, div.pagination span.dots, div.pagination span.current {
 -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+-o-box-shadow:  0 0 0 1px rgba(0, 0, 0, 0.2);
+box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 margin: 1px 2px;
 padding: 10px 20px;
 display: inline-block;
@@ -227,7 +230,7 @@ max-height: 150%;
 .blog-list .whats-happening-image img {
 display: block;
 max-width: 100%;
-height: auto;
+height: 100%;
 width: 100%;
 -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
@@ -277,8 +280,8 @@ padding: 30px;
 background: #fff;
 border-top: 0px solid #fff;
 top: 0px;
-min-height: 167px;
-max-height: 167px;
+min-height: 180px;
+max-height: 180px;
 margin-bottom: 40px;
 }
 
@@ -288,6 +291,9 @@ background: #f8f8f8;
 
 .blog-list .blog-meta{
 text-align: center;
+margin-top:18px;
+font-size:16px;
+color:#ccc;
 }
 
 .blog-list .pagination{
@@ -503,15 +509,42 @@ color:#aaa;
 	height:100%;
 }
 
-.home .navbar a{
+.home .navbar a, .error404 .navbar a{
 	color:#2c2d2d;
 }
 
+
+#categories #cat {
+width: 20%;
+color: #333;
+font-weight: normal;
+line-height: 1.2em;
+margin: 30px 0 0;
+padding: 15px 0 15px 10px;
+border: 0 none;
+border-radius:0px;
+cursor: pointer;
+text-indent: 0.01px;
+text-overflow: "";
+background: url('/wp-content/themes/hextheme/images/dropdown.png') no-repeat 95% 50% #fff;
+-webkit-appearance: none;
+-moz-appearance: none;
+-ms-appearance: none;
+appearance: none;
+
+}
+
+.posts-container [class*="column"]+[class*="column"]:last-child{float:left}
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
 
 .navbar a{
 	font-size:.75em;
+}
+
+#categories #cat {
+width: 50%;
+
 }
 
 }
@@ -551,6 +584,11 @@ display:none;
 
 .blog-right{
 padding:50px 20px 20px;
+}
+
+#categories #cat {
+width: 75%;
+
 }
 
 }
@@ -613,4 +651,10 @@ ul.children{
 .blogcontent .simplesocialbuttons {
 	display:none;
 }
+
+
+
+
+
+
 }

@@ -26,16 +26,22 @@ if( get_field( "background_image" ) ): ?>
 			<div class="clear100"></div><div class="clear20"></div>
 
 		<h2 class="blog-page-title"><?php the_title(); ?> </h2>
-		<div class="blog-meta"> <span>		<?php
+		<div class="blog-meta"> <span>			
+			<?php
+			$out = array();
 			$i = 0;
 			foreach (get_the_category() as $category){
 				if($i < 2) {
-			echo $category->cat_name;
-			
-			 }
+				array_push($out, "$category->cat_name");
+					
 			     $i++;
 			}
-		 ?></span> / <span><?php the_time('F jS, Y') ?> </span></div>
+			}
+			echo implode(', ', $out);
+
+		 ?>
+
+		</span> / <span><?php the_time('F jS, Y') ?> </span></div>
 		 <div class="clear50"></div>
 		 </div>
 	</div>

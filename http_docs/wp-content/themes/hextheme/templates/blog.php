@@ -22,6 +22,20 @@ Template Name: Blog
 		<h2 class="subtitle textmedium textcenter">
 			Subtitle goes here		</h2>
 
+<li id="categories">
+	<?php wp_dropdown_categories('show_option_all=All Categories'); ?>
+
+<script type="text/javascript"><!--
+    var dropdown = document.getElementById("cat");
+    function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "<?php echo get_option('home');
+?>/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+    }
+    dropdown.onchange = onCatChange;
+--></script>
+</li>
 
 			</div> <!-- end verticalcenterblock -->
 		</div> <!-- end verticalcenterwrap -->
@@ -39,7 +53,7 @@ Template Name: Blog
 
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args = array( 'category_name' => 'blog', 'posts_per_page' => 6, 'paged' => $paged );
+$args = array(  'posts_per_page' => 6, 'paged' => $paged );
 query_posts($args);
 if ( have_posts() ) :
 while(have_posts()) : the_post(); ?>
@@ -59,16 +73,24 @@ while(have_posts()) : the_post(); ?>
 		          </div> <!-- end blog image -->
 			<div class="blog-prev">
 		     <a href="<?php the_permalink() ?>"><h3 class="blog-title"><?php echo short_title('...', 40); ?></h3></a>
-		    	<div class="blog-meta"> <span>		<?php
+		    	<div class="blog-meta"> <span>	
+
+
+
+	<?php
+			$out = array();
 			$i = 0;
 			foreach (get_the_category() as $category){
 				if($i < 2) {
-			echo $category->cat_name;
-			echo " - ";
-			 }
+				array_push($out, "$category->cat_name");
+					
 			     $i++;
 			}
-		 ?></span> / <span><?php the_time('d/m/y') ?> </span></div>
+			}
+			echo implode(', ', $out);
+
+		 ?>
+		</span> / <span><?php the_time('d.m.y') ?> </span></div>
 			</div>
 			
 			</div>
