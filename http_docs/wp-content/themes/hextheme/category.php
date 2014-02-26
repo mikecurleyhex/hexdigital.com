@@ -40,9 +40,9 @@ while(has_sub_field('work', 276)): //get bg & subhead from the Blog page's custo
     var dropdown = document.getElementById("cat"); 
     function onCatChange() {
 		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-			location.href = "<?php echo get_option('home');?>/?cat="+dropdown.options[dropdown.selectedIndex].value;}
+			location.href = "<?php echo get_option('home');?>/?cat="+dropdown.options[dropdown.selectedIndex].value+"/#blog-list";}
 
-		else {location.href = "<?php echo get_option('home');?>/blog"
+		else {location.href = "<?php echo get_option('home');?>/blog/#blog-list"
 	}
     }
     dropdown.onchange = onCatChange;
@@ -59,7 +59,7 @@ while(has_sub_field('work', 276)): //get bg & subhead from the Blog page's custo
 <?php endwhile; ?>
 
 
-<div class="blog-list">
+<div id="blog-list" class="blog-list">
 <div class="clear100"></div>
 	<div class="large-10 large-centered columns">
 	<div class="posts-container">	

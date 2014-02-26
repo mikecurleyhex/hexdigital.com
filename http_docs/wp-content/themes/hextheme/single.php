@@ -3,7 +3,7 @@
 <?php the_post(); ?>
 
 <div class="row">
-	<div class="large-6 columns blog-left" style="padding:0px; min-height:100%; z-index:-; position:static ; background: url('/wp-content/uploads/2014/02/green.gif') fixed no-repeat center center;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
+	<div class="large-6 columns blog-left" style="padding:0px; min-height:100%; z-index:-; position:static ; background: url('/wp-content/uploads/2014/02/green-3-01.jpg') fixed no-repeat center center;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover;
 <?php
 
 if( get_field( "background_image" ) ): ?>
@@ -19,11 +19,13 @@ if( get_field( "background_image" ) ): ?>
 				<a href="/blog" class="backtoblog"><span>&#8629;</span>	 Back to Blog</a>
 
 				<a href="/">
-					<img src="/images/hex-ident.png" class="backhome" style="float:right;" width="50"/>
+					<img src="/images/hex-ident.png" class="backhome realeasy rotate" style="float:right;" width="50"/>
 				</a>
 			</div>
 
-			<div class="clear100"></div><div class="clear20"></div>
+			<div class="clear50"></div>
+			<div class="clear50 rule toprule"></div>
+			<div class="clear20"></div>
 
 		<h2 class="blog-page-title"><?php the_title(); ?> </h2>
 		<div class="blog-meta"> <span>			
@@ -43,18 +45,27 @@ if( get_field( "background_image" ) ): ?>
 
 		</span> / <span><?php the_time('F jS, Y') ?> </span></div>
 		 <div class="clear50"></div>
+		 <div class="rule bottomrule"></div>
+		 <div class="prevnext">
+		 	<div class="navolder">
+		 		<?php previous_post('%', ' < OLDER', 'no'); ?>&nbsp;
+		 		</div>
+		 		<div class="navnewer">
+		 			&nbsp;<?php next_post('%', 'NEWER >', 'no'); ?>
+				</div>
+		 		</div>
 		 </div>
 	</div>
 </div>
 	<div class="large-6 columns blog-right">
 
-	<div class="blogcontent">
+	<div class="blogcontent rulegrey">
 
 		<?php the_content(); ?>
 
-		<?php get_ssb($order = array('googleplus' => 3, 'fblike' => 2, 'twitter' => 1)); ?>
-
 	</div>
+
+	<?php get_ssb($order = array('googleplus' => 3, 'fblike' => 2, 'twitter' => 1)); ?>
 
 <div class="clear50"></div>
 
